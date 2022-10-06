@@ -1,0 +1,685 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{55A03463-0F27-4740-87B9-6E4FE572B792}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DoctorApp</RootNamespace>
+    <AssemblyName>DoctorApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RestSharp, Version=106.12.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>packages\RestSharp.106.12.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Rotativa.1.7.3\lib\net461\Rotativa.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.5.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.5.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminSettingController.cs" />
+    <Compile Include="Controllers\DoctorController.cs" />
+    <Compile Include="Controllers\DoctordasboardController.cs" />
+    <Compile Include="Controllers\DoctorRegistrationController.cs" />
+    <Compile Include="Controllers\DoctorScheduleController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MacMappingController.cs" />
+    <Compile Include="Controllers\PatientAppointmentController.cs" />
+    <Compile Include="Controllers\PatientController.cs" />
+    <Compile Include="Controllers\PatientRegistrationController.cs" />
+    <Compile Include="Controllers\PatientRegistrationReportController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\ZoomMeetingController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdminSetting.cs" />
+    <Compile Include="Models\AvailableDoctor.cs" />
+    <Compile Include="Models\DoctorAppointment.cs" />
+    <Compile Include="Models\DoctorLocation.cs" />
+    <Compile Include="Models\DoctorSchedule.cs" />
+    <Compile Include="Models\Insurancepolicy.cs" />
+    <Compile Include="Models\PatientAppointment.cs" />
+    <Compile Include="Models\PatientKitMapping.cs" />
+    <Compile Include="Models\PatientRegistration.cs" />
+    <Compile Include="Models\Patientvisited.cs" />
+    <Compile Include="Models\Preexistingdisease.cs" />
+    <Compile Include="Models\Providers\LanguageMang.cs" />
+    <Compile Include="Models\Providers\Utilities.cs" />
+    <Compile Include="Models\Providers\WebRoleProvider.cs" />
+    <Compile Include="Models\ReportsVM\AppointmentReportVM.cs" />
+    <Compile Include="Models\ReportsVM\PatientRegistrationDetailReportVM.cs" />
+    <Compile Include="Models\ReportsVM\PatientRegistrationReportVM.cs" />
+    <Compile Include="Models\ReportsVM\PatientReportVM.cs" />
+    <Compile Include="Models\ReportsVM\VisitedPatientReportVM.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\SelectSPPatientRegistration_Result.cs" />
+    <Compile Include="Models\SelectSPVisitedPatient_Result.cs" />
+    <Compile Include="Models\Specialist.cs" />
+    <Compile Include="Models\SPSelectAvailableDoctorsWithMeettingdetails_Result.cs" />
+    <Compile Include="Models\SPSelectAvailableDoctorsWithMeettingdetails_Result1.cs" />
+    <Compile Include="Models\SPSelectAvailableDoctors_Result.cs" />
+    <Compile Include="Models\SPSelectDoctorScheduleBy_Result.cs" />
+    <Compile Include="Models\SPSelectDoctorSchedule_Result.cs" />
+    <Compile Include="Models\SPSelectPatientAppointment_Result.cs" />
+    <Compile Include="Models\SPSelectRegisteredPatients_Result.cs" />
+    <Compile Include="Models\SPSelectRegisteredPatients_Result1.cs" />
+    <Compile Include="Models\SPSelectRegisteredPatients_Result2.cs" />
+    <Compile Include="Models\SPSelectRegisteredPatients_Result3.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ViewModel\AdminSettingVM.cs" />
+    <Compile Include="Models\ViewModel\CommanVM.cs" />
+    <Compile Include="Models\ViewModel\constant.cs" />
+    <Compile Include="Models\ViewModel\DoctorPrescriptionVM.cs" />
+    <Compile Include="Models\ViewModel\DoctorScheduleVM.cs" />
+    <Compile Include="Models\ViewModel\DoctorsMettingVM.cs" />
+    <Compile Include="Models\ViewModel\KioskLocationsVM.cs" />
+    <Compile Include="Models\ViewModel\MacmappingVM.cs" />
+    <Compile Include="Models\ViewModel\MedicalRecordsViewModel.cs" />
+    <Compile Include="Models\ViewModel\PatientLoginVM.cs" />
+    <Compile Include="Models\ViewModel\PatientModule.cs" />
+    <Compile Include="Models\ViewModel\PatientRegistrationVM.cs" />
+    <Compile Include="Models\ViewModel\PatientVisitedVM.cs" />
+    <Compile Include="Models\ViewModel\ResultVM.cs" />
+    <Compile Include="Models\ViewModel\ScheduleAppointmentModel.cs" />
+    <Compile Include="Models\ViewModel\SpecialistVM.cs" />
+    <Compile Include="Models\ViewModel\SPPatientAppointmentResult.cs" />
+    <Compile Include="Models\ViewModel\TokenValidationModel.cs" />
+    <Compile Include="Models\ViewModel\UserLogin.cs" />
+    <Compile Include="Models\ViewModel\UsersVM.cs" />
+    <Compile Include="Models\ViewModel\VisitedPatientsModel.cs" />
+    <Compile Include="Models\ViewModel\ZoomAPIVM.cs" />
+    <Compile Include="Models\ZoomMeetingSetting.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Api Services\AdminSettingApiServices.cs" />
+    <Compile Include="Services\Api Services\DoctorScheduleApiService.cs" />
+    <Compile Include="Services\Api Services\KioskLocationsApiServices.cs" />
+    <Compile Include="Services\Api Services\MacMappingServiceApi.cs" />
+    <Compile Include="Services\Api Services\PatientAppointmentApiService.cs" />
+    <Compile Include="Services\Api Services\PatientEmailApiService.cs" />
+    <Compile Include="Services\Api Services\PatientRegistrationApiServices.cs" />
+    <Compile Include="Services\Api Services\PatientRegistrationReportApiService.cs" />
+    <Compile Include="Services\Api Services\PatientvisitedApiService.cs" />
+    <Compile Include="Services\Api Services\TokenApiService.cs" />
+    <Compile Include="Services\Api Services\UserApiService.cs" />
+    <Compile Include="Services\Api Services\ZoomMeetingApiServices.cs" />
+    <Compile Include="Services\DebugLogService.cs" />
+    <Compile Include="VideoMeeting\meeting.aspx.cs">
+      <DependentUpon>meeting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VideoMeeting\meeting.aspx.designer.cs">
+      <DependentUpon>meeting.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Asset\css\bootstrap.css" />
+    <Content Include="Asset\css\fontawesome.css" />
+    <Content Include="Asset\css\jquery.dataTables.min.css" />
+    <Content Include="Asset\css\responsive.css" />
+    <Content Include="Asset\css\style.css" />
+    <Content Include="Asset\images\doc_reg_logo.png" />
+    <Content Include="Asset\images\images\1_card.png" />
+    <Content Include="Asset\images\images\1_card.svg" />
+    <Content Include="Asset\images\images\2_card.png" />
+    <Content Include="Asset\images\images\3_card.png" />
+    <Content Include="Asset\images\images\appoinment_top.svg" />
+    <Content Include="Asset\images\images\appointment_icon.svg" />
+    <Content Include="Asset\images\images\bloodpressure-instrument.png" />
+    <Content Include="Asset\images\images\bloodtemperature-instrument.svg" />
+    <Content Include="Asset\images\images\blood_pressure_icon.svg" />
+    <Content Include="Asset\images\images\body_fat.png" />
+    <Content Include="Asset\images\images\body_temperacture_icon.svg" />
+    <Content Include="Asset\images\images\cut-call-img.svg" />
+    <Content Include="Asset\images\images\dashboard_icon.svg" />
+    <Content Include="Asset\images\images\dht-instrument.png" />
+    <Content Include="Asset\images\images\dht_icon.svg" />
+    <Content Include="Asset\images\images\doctor-video-call.svg" />
+    <Content Include="Asset\images\images\ecg-chart-img.svg" />
+    <Content Include="Asset\images\images\ecg_icon.svg" />
+    <Content Include="Asset\images\images\height_weight_icon.svg" />
+    <Content Include="Asset\images\images\hw-instrument.png" />
+    <Content Include="Asset\images\images\instrument-background.svg" />
+    <Content Include="Asset\images\images\kevell_care_logo.png" />
+    <Content Include="Asset\images\images\language_icon.png" />
+    <Content Include="Asset\images\images\logo.svg" />
+    <Content Include="Asset\images\images\logooo.svg" />
+    <Content Include="Asset\images\images\logoooo.png" />
+    <Content Include="Asset\images\images\medical_icon.png" />
+    <Content Include="Asset\images\images\mute-call-img.svg" />
+    <Content Include="Asset\images\images\nav-bar.png" />
+    <Content Include="Asset\images\images\patient-video-img.svg" />
+    <Content Include="Asset\images\images\patientposition-instrument.png" />
+    <Content Include="Asset\images\images\patient_info_icon.svg" />
+    <Content Include="Asset\images\images\patient_position_icon.svg" />
+    <Content Include="Asset\images\images\pdf.svg" />
+    <Content Include="Asset\images\images\pdf_img.svg" />
+    <Content Include="Asset\images\images\prescription_top.svg" />
+    <Content Include="Asset\images\images\profile.svg" />
+    <Content Include="Asset\images\images\registered_patient_icon.svg" />
+    <Content Include="Asset\images\images\report_icon.svg" />
+    <Content Include="Asset\images\images\search.svg" />
+    <Content Include="Asset\images\images\side_background.svg" />
+    <Content Include="Asset\images\images\side_bottom_img.svg" />
+    <Content Include="Asset\images\images\spo2-instrument.png" />
+    <Content Include="Asset\images\images\spo2_icon.svg" />
+    <Content Include="Asset\images\images\table_eye.svg" />
+    <Content Include="Asset\images\images\tittle_top_back.svg" />
+    <Content Include="Asset\images\images\visited_patient_icon.svg" />
+    <Content Include="Asset\images\images\year_of_experience.png" />
+    <Content Include="Asset\images\profile im.jpg" />
+    <Content Include="Asset\images\Stethoscope2.png" />
+    <Content Include="Asset\images\stethoscopegif.gif" />
+    <Content Include="Asset\js\bootstrap\bootstrap.min.js" />
+    <Content Include="Asset\js\bootstrap\popper.min.js" />
+    <Content Include="Asset\js\icons\feather-icon\feather-icon-clipart.js" />
+    <Content Include="Asset\js\icons\feather-icon\feather-icon.js" />
+    <Content Include="Asset\js\icons\feather-icon\feather.min.js" />
+    <Content Include="Asset\js\icons\flag-icon-clipart.js" />
+    <Content Include="Asset\js\icons\icon-clipart.js" />
+    <Content Include="Asset\js\icons\icons-notify.js" />
+    <Content Include="Asset\js\icons\whether-icon-clipart.js" />
+    <Content Include="Asset\js\jquery-3.5.1.min.js" />
+    <Content Include="Asset\js\jquery.dataTables.min.js" />
+    <Content Include="Asset\js\script.js" />
+    <Content Include="Asset\js\sidebar-menu.js" />
+    <Content Include="Asset\js\theme-customizer\customizer.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DataTable\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTable\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTable\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTable\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTable\css\dataTables.bootstrap5.css" />
+    <Content Include="Content\DataTable\css\dataTables.bootstrap5.min.css" />
+    <Content Include="Content\DataTable\css\dataTables.bulma.css" />
+    <Content Include="Content\DataTable\css\dataTables.bulma.min.css" />
+    <Content Include="Content\DataTable\css\dataTables.checkboxes.css" />
+    <Content Include="Content\DataTable\css\dataTables.dataTables.css" />
+    <Content Include="Content\DataTable\css\dataTables.dataTables.min.css" />
+    <Content Include="Content\DataTable\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTable\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTable\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTable\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTable\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTable\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTable\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTable\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTable\images\sort_asc.png" />
+    <Content Include="Content\DataTable\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTable\images\sort_both.png" />
+    <Content Include="Content\DataTable\images\sort_desc.png" />
+    <Content Include="Content\DataTable\images\sort_desc_disabled.png" />
+    <Content Include="Css\adminsetting.css" />
+    <Content Include="Css\bootstrap.min.css" />
+    <Content Include="Css\dialogmodel.css" />
+    <Content Include="Css\doctorprofileviewmodelpop.css" />
+    <Content Include="Css\doctor_patient_page.css" />
+    <Content Include="Css\doctor_register_page.css" />
+    <Content Include="Css\email_verification.css" />
+    <Content Include="Css\job-1.css" />
+    <Content Include="Css\line-awesome.min.css" />
+    <Content Include="Css\main.css" />
+    <Content Include="Css\Nextappoinmentmodal.css" />
+    <Content Include="Css\patientappointmentcss.css" />
+    <Content Include="Css\PatientMedicalRecords.css" />
+    <Content Include="Css\patient_info.css" />
+    <Content Include="Css\Prescription\response-prescription.css" />
+    <Content Include="Css\Prescription\style-prescription.css" />
+    <Content Include="Css\register.css" />
+    <Content Include="Css\Registerpagedialogbox.css" />
+    <Content Include="Css\registerusercss.css" />
+    <Content Include="Css\registeruserlist.css" />
+    <Content Include="Css\Report_viewpatientreport.css" />
+    <Content Include="Css\Rxmodal.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Js\Adminsetting\AdminSetting.js" />
+    <Content Include="Js\BookAppointment\AppointmentBook.js" />
+    <Content Include="Js\bootstrap.min.js" />
+    <Content Include="Js\custom.js" />
+    <Content Include="Js\DoctorApporved\Doctor_apporved.js" />
+    <Content Include="Js\DoctorRegistration\DotorRegistration.js" />
+    <Content Include="Js\DoctorSchedule\DoctorSchedule.js" />
+    <Content Include="Js\DoctorSchedule\UpdateDoctorSchedule.js" />
+    <Content Include="Js\Doctor_Patient\Doctor_Patients.js" />
+    <Content Include="Js\Doctor_Patient\Ecgchart.js" />
+    <Content Include="Js\Doctor_Patient\Emgchart.js" />
+    <Content Include="Js\Doctor_Patient\Gsrchart.js" />
+    <Content Include="Js\doctor_reg_custom.js" />
+    <Content Include="Js\Emailverfication\Emailverification.js" />
+    <Content Include="Js\jquery.dataTables.js" />
+    <Content Include="Js\jquery.min.js" />
+    <Content Include="Js\LoginJS\LoginJS.js" />
+    <Content Include="Js\Mapping\DoctorMapping.js" />
+    <Content Include="Js\Mapping\Macmapping.js" />
+    <Content Include="Js\PatientAppointment\PatientAppointment.js" />
+    <Content Include="Js\PatientRegistrationJS\Registerpage.js" />
+    <Content Include="Js\PatientRegistrationJS\RegisterpageJS.js" />
+    <Content Include="Js\popper.min.js" />
+    <Content Include="Js\Reports\AppointmenReport.js" />
+    <Content Include="Js\Reports\MedicalRecordReport.js" />
+    <Content Include="Js\Reports\PatientRegisterReport.js" />
+    <Content Include="Js\Reports\PatientReportList.js" />
+    <Content Include="Js\Reports\ReportUtilities.js" />
+    <Content Include="Js\Reports\ViewReport.js" />
+    <Content Include="Js\Reports\ViewVisitedPatientReport.js" />
+    <Content Include="Js\Reports\VisitedPatientReport.js" />
+    <Content Include="Js\template.js" />
+    <Content Include="Js\Users\Userslist.js" />
+    <Content Include="Js\Utilities.js" />
+    <Content Include="Js\WaitingHallPatientJS\Patient_WaitingHallPatient.js" />
+    <Content Include="Js\windowscroll.js" />
+    <Content Include="Js\ZoomMeeting\ZoomMeeting.js" />
+    <Content Include="Js\_Doctormenu.js" />
+    <Content Include="Rotativa\help-wkhtmltoimage.txt" />
+    <Content Include="Rotativa\help-wkhtmltopdf.txt" />
+    <Content Include="Rotativa\wkhtmltoimage.exe" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="App_Browsers\qt.browser" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\DataTable\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTable\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTable\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTable\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTable\dataTables.bootstrap5.js" />
+    <Content Include="Scripts\DataTable\dataTables.bootstrap5.min.js" />
+    <Content Include="Scripts\DataTable\dataTables.bulma.js" />
+    <Content Include="Scripts\DataTable\dataTables.bulma.min.js" />
+    <Content Include="Scripts\DataTable\dataTables.checkboxes.min.js" />
+    <Content Include="Scripts\DataTable\dataTables.dataTables.js" />
+    <Content Include="Scripts\DataTable\dataTables.dataTables.min.js" />
+    <Content Include="Scripts\DataTable\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTable\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTable\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTable\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTable\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTable\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTable\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTable\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="UploadedFile\PdfFiles\13092021150946home-admin.PNG" />
+    <Content Include="VideoMeeting\corp.js" />
+    <Content Include="VideoMeeting\favicon.ico" />
+    <Content Include="VideoMeeting\helper.html" />
+    <Content Include="VideoMeeting\index.html" />
+    <Content Include="VideoMeeting\js\index.js" />
+    <Content Include="VideoMeeting\js\meeting.js" />
+    <Content Include="VideoMeeting\js\tool.js" />
+    <Content Include="VideoMeeting\js\vconsole.min.js" />
+    <Content Include="VideoMeeting\meeting.aspx" />
+    <Content Include="VideoMeeting\meeting.html" />
+    <Content Include="VideoMeeting\webpack.config.dev.js" />
+    <Content Include="Views\Shared\_DoctorMenuBar.cshtml" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\PatientRegistration\RegisterPage.cshtml" />
+    <Content Include="Views\PatientRegistration\Appoinmentbooking.cshtml" />
+    <Content Include="Views\Shared\MenubarLayout.cshtml" />
+    <Content Include="Views\Patient\WaitingHallPatient.cshtml" />
+    <Content Include="Views\Shared\_AdminMenuBar.cshtml" />
+    <Content Include="Views\PatientAppointment\PatientAppointment.cshtml" />
+    <Content Include="Views\Patient\PatientInfo.cshtml" />
+    <Content Include="Views\Doctor\Patients.cshtml" />
+    <Content Include="VideoMeeting\.babelrc" />
+    <Content Include="VideoMeeting\localhost.crt" />
+    <Content Include="VideoMeeting\localhost.key" />
+    <Content Include="VideoMeeting\package.json" />
+    <Content Include="Views\PatientRegistrationReport\AppointmentReport.cshtml" />
+    <Content Include="Views\PatientRegistrationReport\PatientMedicalRecords.cshtml" />
+    <Content Include="Views\PatientRegistrationReport\PatientRegistration.cshtml" />
+    <Content Include="Views\PatientRegistrationReport\PatientReportList.cshtml" />
+    <Content Include="Views\PatientRegistrationReport\RegistrationDetailReport.cshtml" />
+    <Content Include="Views\PatientRegistrationReport\ViewPatientReport.cshtml" />
+    <Content Include="Views\PatientRegistrationReport\ViewVisitedPatientReport.cshtml" />
+    <Content Include="Views\PatientRegistrationReport\VisitedPatientReport.cshtml" />
+    <Content Include="Views\DoctorSchedule\AvailableDoctors.cshtml" />
+    <Content Include="Views\DoctorSchedule\_doctorschedule.cshtml" />
+    <Content Include="Views\DoctorSchedule\_doctorsListView.cshtml" />
+    <Content Include="Views\DoctorSchedule\UpdateSchedule.cshtml" />
+    <Content Include="Views\ZoomMeeting\CreateMeeting.cshtml" />
+    <Content Include="Views\Users\DoctorApprovedListview.cshtml" />
+    <Content Include="Views\Users\Registration.cshtml" />
+    <Content Include="Views\Users\UpdateRegistration.cshtml" />
+    <Content Include="Views\Users\UserList.cshtml" />
+    <Content Include="Views\MacMapping\DoctorlistMapping.cshtml" />
+    <Content Include="Views\MacMapping\Macmapping.cshtml" />
+    <Content Include="Views\PatientRegistration\Emailverification.cshtml" />
+    <Content Include="Views\Shared\_PatientDetailToggle.cshtml" />
+    <Content Include="Views\Shared\_DoctorPrescription.cshtml" />
+    <Content Include="Views\AdminSetting\Setting.cshtml" />
+    <Content Include="Views\Doctordasboard\Doctordasboard.cshtml" />
+    <Content Include="Views\DoctorRegistration\Registration.cshtml" />
+    <Content Include="UploadedFile\PdfFiles\01112021191142sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\02092021160916sample - Copy %283%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\02092021160916sample - Copy %284%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\02092021160916sample - Copy %285%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\02092021170928sample - Copy %286%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\02092021170939sample - Copy %287%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\02092021170957sample - Copy %284%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\03012022070148Error Log.ods" />
+    <Content Include="UploadedFile\PdfFiles\03092021140918Medlyves - Status - 10-Jun-2021.pdf" />
+    <Content Include="UploadedFile\PdfFiles\03092021140918medlyves-WS-flow.pdf" />
+    <Content Include="UploadedFile\PdfFiles\04012022090141offer print.pdf" />
+    <Content Include="UploadedFile\PdfFiles\04012022100104offer print.pdf" />
+    <Content Include="UploadedFile\PdfFiles\04012022100149Untitled Document 1" />
+    <Content Include="UploadedFile\PdfFiles\04012022100159Untitled Document 1" />
+    <Content Include="UploadedFile\PdfFiles\04012022110159offer print.pdf" />
+    <Content Include="UploadedFile\PdfFiles\04012022120106Untitled Document 1" />
+    <Content Include="UploadedFile\PdfFiles\04102021151052Scan Report.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021131109sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021141130sample - Copy.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021141132sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021161110sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021161137sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021171101sample - Copy.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021171101sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021171111sample - Copy.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021171111sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021171120sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021171147sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021171150sample - Copy.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021171150sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021171151sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021171156sample - Copy.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021181135sample - Copy.pdf" />
+    <Content Include="UploadedFile\PdfFiles\08112021181135sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\11112021151122sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\12012022100109react.docx" />
+    <Content Include="UploadedFile\PdfFiles\12102021101000Scan Report.pdf" />
+    <Content Include="UploadedFile\PdfFiles\12102021111008Scan Report.pdf" />
+    <Content Include="UploadedFile\PdfFiles\12102021111039Scan Report.pdf" />
+    <Content Include="UploadedFile\PdfFiles\13092021150937sample - Copy %282%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\13092021150937sample - Copy %283%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\13092021170901sample - Copy %282%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\13092021170914sample - Copy %283%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\17092021160925sample - Copy %282%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021110832sample - Copy %285%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021120801sample - Copy %284%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021120801sample - Copy %287%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021120818sample - Copy %284%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021120818sample - Copy %285%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021130805sample - Copy %282%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021130805sample - Copy %284%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021130805sample - Copy.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021130814sample - Copy %283%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021130814sample - Copy %287%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021130828sample - Copy %283%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021130828sample - Copy %286%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021140807sample - Copy %283%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021140807sample - Copy %284%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021140807sample - Copy %285%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021140838sample - Copy %285%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021140838sample - Copy.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021140849sample - Copy %283%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\18082021140849sample - Copy %285%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\22092021120937sample - Copy %282%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\22092021120937sample - Copy %283%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\22092021120956sample - Copy %282%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23082021120829sample - Copy %282%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23082021120829sample - Copy %283%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23082021120829sample - Copy %284%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23082021120829sample - Copy %285%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23082021120829sample - Copy %286%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23082021120858sample - Copy %284%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23082021120858sample - Copy %286%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23082021120858sample - Copy %287%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23082021190834sample - Copy %283%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23082021190834sample - Copy %284%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23082021190834sample - Copy %285%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23082021190838sample - Copy %283%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23082021190838sample - Copy %285%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23082021190838sample - Copy %286%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23092021160936Lab Report.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23092021160937Scan Report.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23092021170917Lab Report.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23092021170917Scan Report.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23102021131027sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23102021141012sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23102021141015sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23102021141035sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23102021141039sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23102021171033sample - Copy.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23102021171033sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23102021181010sample - Copy.pdf" />
+    <Content Include="UploadedFile\PdfFiles\23102021181025sample - Copy.pdf" />
+    <Content Include="UploadedFile\PdfFiles\24092021120959sample - Copy.pdf" />
+    <Content Include="UploadedFile\PdfFiles\24092021120959sample.pdf" />
+    <Content Include="UploadedFile\PdfFiles\25082021120854sample - Copy %285%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\25082021120854sample - Copy %286%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\25082021120854sample - Copy %287%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\25092021170918Scan Report.pdf" />
+    <Content Include="UploadedFile\PdfFiles\28082021140824sample - Copy %282%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\28082021140824sample - Copy %283%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\28102021101006test.pdf" />
+    <Content Include="UploadedFile\PdfFiles\30102021131022test.pdf" />
+    <Content Include="UploadedFile\PdfFiles\30122021151200Certificate %286%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\30122021151241Certificate %286%29.pdf" />
+    <Content Include="UploadedFile\PdfFiles\30122021161221Offers_13-12-2021.pdf" />
+    <Content Include="UploadedFile\PdfFiles\30122021161223Offers_13-12-2021.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
+    <Folder Include="UploadedFile\HtmlPdfs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51012</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51012/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
